@@ -40,16 +40,15 @@ public class PessoaDAO {
         try {
             Statement st = ConexaoBD.getInstance().getConnection().createStatement();
             
-            String sql = "update pessoa set"
+            String sql = "update pessoa set "
                     + "nome = '" + pessoa.getNomePessoa() +"',"
                     + "email = '"+ pessoa.getEmailPessoa() +"',"
                     + "telefone = '"+ pessoa.getTelefonePessoa() +"',"
                     + "data_nascimento = '"+ pessoa.getDataNascimento() +"'"
-                    + "where id = " + pessoa.getIdPessoa();
+                    + " where id = " + pessoa.getIdPessoa();
             
             st.executeUpdate(sql);
             return true;
-            
         } catch (SQLException e) {
             System.out.println("Erro ao atualizar cadastro: " + e);
             return false;

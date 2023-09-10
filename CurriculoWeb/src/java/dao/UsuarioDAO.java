@@ -16,7 +16,9 @@ public class UsuarioDAO {
         
         Usuario u = this.consultarUsuario(usuarioDigitado);
         
-        if (u.getNomeUsuario().equals(usuarioDigitado) 
+        if (u.getNomeUsuario() == null) {
+            return false;
+        } else if (u.getNomeUsuario().equals(usuarioDigitado) 
                 && u.getSenhaUsuario().equals(senhaDigitada)) {
             return true;            
         } else {
@@ -34,10 +36,9 @@ public class UsuarioDAO {
             String sql = "select * from usuario where nome = '" + usuario + "';";
             
             ResultSet resultado = st.executeQuery(sql);
-            
             resultado.next();
-                u.setNomeUsuario(resultado.getString("nome"));
-                u.setSenhaUsuario(resultado.getString("senha"));
+            u.setNomeUsuario(resultado.getString("nome"));
+            u.setSenhaUsuario(resultado.getString("senha"));
         } catch (SQLException e) {
             System.out.println("Erro ao consultar o login: " + e);
         }

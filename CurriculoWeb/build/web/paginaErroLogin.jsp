@@ -9,9 +9,18 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Erro</title>
+        <title>Erro no login</title>
+        
+        <link rel="stylesheet" href="css/estilos.css">
+        
     </head>
     <body>
-        <h1>Ocorreu um erro ao realizar o login.</h1>
+        <div>
+            <h1>Dados inválidos ou usuário não localizado.</h1>
+            
+            <form action="index.jsp" method="post" class="form-voltar">
+                <input type="submit" name="voltarLogin" value="Voltar para login" class="btn-entrar">
+            </form>
+        </div>
     </body>
 </html>

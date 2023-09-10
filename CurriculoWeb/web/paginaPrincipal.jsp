@@ -11,25 +11,20 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Menu</title>
         
-        <style>
-            ul {
-                list-style-type: none;
-                margin: 0;
-                padding: 0;
-            }
-            li {
-                display: inline;
-            }
-        </style>
+        <link rel="stylesheet" href="css/estilos.css">
+        
     </head>
     <body>
-        <ul>
-            <li>
-                <a href="paginaPrincipal.jsp">Home</a>
-            </li>
-            <li>
-                <a href="cadastroPessoa.jsp">Cadastro Pessoal</a>
-            </li>
-        </ul>
+        <div>
+            <h1>Escolha uma das opções do menu</h1>
+            <ul>
+                <li>
+                    <a href="paginaPrincipal.jsp" class="menu01">Home</a>
+                </li>
+                <li>
+                    <a href="cadastroPessoa.jsp" class="menu02">Cadastro Pessoa</a>
+                </li>
+            </ul>
+        </div>
     </body>
 </html>
