@@ -88,7 +88,7 @@
                 <td><%= pessoas.get(i).getTelefonePessoa() %></td>
                 <td><%= pessoas.get(i).getDataNascimento() %></td>
                 <td> <a href="acaoServ?a=editarPessoa&id=<%= pessoas.get(i).getIdPessoa()%>" class="btn btn-success">Editar</a></td>
-                <td> <a href="acaoServ?a=exPessoa&id=<%= pessoas.get(i).getIdPessoa()%>" class="btn btn-danger">Excluir</a></td>
+                <td> <a href="acaoServ?a=excluirPessoa&id=<%= pessoas.get(i).getIdPessoa()%>" class="btn btn-danger">Excluir</a></td>
                 <td></td>
             </tr>
             <%

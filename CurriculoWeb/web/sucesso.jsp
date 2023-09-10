@@ -31,6 +31,6 @@
                 <a href="cadastroPessoa.jsp">Cadastro Pessoal</a>
             </li>
         </ul>
-        <h1>Seu cadastro foi salvo com sucesso!</h1>
+        <h1>Operação realizada com sucesso!</h1>
     </body>
 </html>

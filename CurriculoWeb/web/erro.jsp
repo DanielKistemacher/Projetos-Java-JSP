@@ -31,6 +31,6 @@
                 <a href="cadastroPessoa.jsp">Cadastro Pessoal</a>
             </li>
         </ul>
-        <h1>Não foi possível salvar seu cadastro, tente novamente.</h1>
+        <h1>Não foi possível realizar a ação, tente novamente.</h1>
     </body>
 </html>

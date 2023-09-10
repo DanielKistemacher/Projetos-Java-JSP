@@ -54,11 +54,11 @@ public class acaoServ extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-    //    processRequest(request, response);
+        //    processRequest(request, response);
     
-    String a = request.getParameter("a");
+        String a = request.getParameter("a");
         
-    if (a.equals("editarPessoa")) {
+        if (a.equals("editarPessoa")) {
             int idPessoa = Integer.parseInt (request.getParameter("id"));
             
             Pessoa pessoa = new PessoaDAO().consultarPessoaId(idPessoa);
@@ -67,8 +67,20 @@ public class acaoServ extends HttpServlet {
             
             encaminharPagina("cadastroPessoa.jsp", request, response);
         }
+        
+        if (a.equals("excluirPessoa")) {
+            int idPessoa = Integer.parseInt (request.getParameter("id"));
+            
+            if (new PessoaDAO().excluir(idPessoa)) {
+                encaminharPagina("sucesso.jsp", request, response);
+            } else {
+                encaminharPagina("erro.jsp", request, response);
+            }
+        }
     }
 
+
+    
     /**
      * Handles the HTTP <code>POST</code> method.
      *
