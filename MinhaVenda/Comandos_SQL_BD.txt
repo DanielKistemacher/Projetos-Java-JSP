@@ -1,0 +1,94 @@
+create database minhavenda;
+
+create table fornecedor (
+	id int AUTO_INCREMENT not null,
+	nome varchar(150) not null,
+	email varchar(45) not null,
+	telefone varchar(45) not null,
+	cnpj varchar(45) not null,
+	primary key (id)
+);
+
+create table compra (
+	id int AUTO_INCREMENT not null,
+	data varchar(45) not null,
+	fornecedor_id int not null,
+	primary key (id),
+	FOREIGN KEY (fornecedor_id) REFERENCES fornecedor (id)
+);
+
+create table produto (
+	id int AUTO_INCREMENT not null,
+	descricao varchar(150) not null,
+	valor_unitario decimal(10,2) not null,
+	qtde_estoque int not null,
+	primary key (id)
+);
+
+create table cliente (
+	id int AUTO_INCREMENT not null,
+	nome varchar(150) not null,
+	email varchar(45) not null,
+	cpf varchar(45) not null,
+	telefone varchar(45) not null,
+	primary key (id)
+);
+
+create table endereco (
+	id int AUTO_INCREMENT not null,
+	descricao varchar(45) not null,
+	cep varchar(10) not null,
+	primary key (id)
+);
+
+create table cliente_endereco (
+	id int AUTO_INCREMENT not null,
+	cliente_id int not null,
+	endereco_id int not null,
+	primary key (id),
+	FOREIGN KEY (cliente_id) REFERENCES cliente (id),
+	FOREIGN KEY (endereco_id) REFERENCES endereco (id)
+);
+
+create table item_compra (
+	id int AUTO_INCREMENT not null,
+	compra_id int not null,
+	produto_id int not null,
+	qtde double not null,
+	valor decimal(10,2) not null,
+	primary key (id),
+	FOREIGN KEY (compra_id) REFERENCES compra (id),
+	FOREIGN KEY (produto_id) REFERENCES produto (id)
+);
+
+create table pedido (
+	id int AUTO_INCREMENT not null,
+	data varchar (50) not null,
+	endereco_entrega varchar(45) not null,
+	observacao varchar(500) not null,
+	cliente_id int  not null,
+	primary key (id),
+	FOREIGN KEY (cliente_id) REFERENCES cliente (id)	
+);
+
+create table item_pedido (
+	id int AUTO_INCREMENT not null,
+	produto_id int not null,
+	pedido_id int not null,
+	qtde double not null,
+	valor_item decimal(10,2) not null,
+	primary key (id),
+	FOREIGN KEY (produto_id) REFERENCES produto (id),
+	FOREIGN KEY (pedido_id) REFERENCES pedido (id)
+);
+
+create table usuario (
+	id int AUTO_INCREMENT not null,
+	nome varchar(100) not null,
+	email varchar(100) not null,
+	senha varchar(100) not null,
+	situacao varchar(1) not null,
+	primary key (id)
+);
+
+insert into usuario values(1, 'Usuario', 'usuario@email.com', MD5('abc123'), 'a');
