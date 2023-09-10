@@ -14,7 +14,7 @@ public class UsuarioDAO {
     
     public boolean autenticarLogin(String usuarioDigitado, String senhaDigitada){
         
-        Usuario u = this.consultarUsuario(usuarioDigitado, senhaDigitada);
+        Usuario u = this.consultarUsuario(usuarioDigitado);
         
         if (u.getNomeUsuario().equals(usuarioDigitado) 
                 && u.getSenhaUsuario().equals(senhaDigitada)) {
@@ -24,7 +24,7 @@ public class UsuarioDAO {
         }
     }
     
-    public Usuario consultarUsuario (String usuario, String senha) {
+    public Usuario consultarUsuario (String usuario) {
         
         Usuario u = new Usuario();
         
@@ -35,11 +35,9 @@ public class UsuarioDAO {
             
             ResultSet resultado = st.executeQuery(sql);
             
-            while (resultado.next()) {
+            resultado.next();
                 u.setNomeUsuario(resultado.getString("nome"));
                 u.setSenhaUsuario(resultado.getString("senha"));
-            }
-            
         } catch (SQLException e) {
             System.out.println("Erro ao consultar o login: " + e);
         }

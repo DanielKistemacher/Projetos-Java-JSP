@@ -23,7 +23,7 @@ public class ConexaoBD {
             String dbdriver = "com.mysql.cj.jdbc.Driver"; //prop.getProperty("db.driver");
             String dburl = "jdbc:mysql://localhost:3306/curriculoWeb"; //prop.getProperty("db.url");
             String dbuser = "root"; //prop.getProperty("db.user");
-            String dbsenha = "280519";//prop.getProperty("db.senha");
+            String dbsenha = "280519"; //prop.getProperty("db.senha");
 
             // Carregar Driver do Banco de Dados
             Class.forName(dbdriver);

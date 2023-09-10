@@ -2,10 +2,8 @@ package servlet;
 
 import dao.PessoaDAO;
 import entidade.Pessoa;
-import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.text.SimpleDateFormat;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -57,6 +55,18 @@ public class acaoServ extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
     //    processRequest(request, response);
+    
+    String a = request.getParameter("a");
+        
+    if (a.equals("editarPessoa")) {
+            int idPessoa = Integer.parseInt (request.getParameter("id"));
+            
+            Pessoa pessoa = new PessoaDAO().consultarPessoaId(idPessoa);
+            
+            request.setAttribute("pessoa", pessoa);
+            
+            encaminharPagina("cadastroPessoa.jsp", request, response);
+        }
     }
 
     /**
@@ -77,21 +87,32 @@ public class acaoServ extends HttpServlet {
         String a = request.getParameter("a");
         
         if (a.equals("salvarPessoa")) {
+            String codigo = request.getParameter("codigo");
             String nome = request.getParameter("nome");
             String email = request.getParameter("email");
             String telefone = request.getParameter("telefone");
             String dataNascimento = request.getParameter("dataNascimento");
             
             Pessoa pessoa = new Pessoa();
+            int idPessoa = Integer.parseInt(codigo);
+            pessoa.setIdPessoa(idPessoa);
             pessoa.setNomePessoa(nome);
             pessoa.setEmailPessoa(email);
             pessoa.setTelefonePessoa(telefone);
             pessoa.setDataNascimento(dataNascimento);
             
-            if (new PessoaDAO().salvar(pessoa)) {
-                encaminharPagina("sucesso.jsp", request, response);
+            if (idPessoa == 0) {
+                if (new PessoaDAO().salvar(pessoa)) {
+                    encaminharPagina("sucesso.jsp", request, response);
+                } else {
+                    encaminharPagina("erro.jsp", request, response);
+                }
             } else {
-                encaminharPagina("erro.jsp", request, response);
+                if (new PessoaDAO().atualizar(pessoa)) {
+                    encaminharPagina("sucesso.jsp", request, response);
+                } else {
+                    encaminharPagina("erro.jsp", request, response);
+                }
             }
         }
     }

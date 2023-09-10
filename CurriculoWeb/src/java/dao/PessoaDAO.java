@@ -100,4 +100,27 @@ public class PessoaDAO {
         
         return pessoas;
     }
+    
+     public Pessoa consultarPessoaId (int idPessoa) {
+        
+        Pessoa p = new Pessoa();
+        
+        try {
+            Statement st = ConexaoBD.getInstance().getConnection().createStatement();
+            
+            String sql = "select * from pessoa where id = '" + idPessoa + "';";
+            
+            ResultSet resultado = st.executeQuery(sql);
+            
+            resultado.next();
+                p.setIdPessoa(resultado.getInt("id"));
+                p.setNomePessoa(resultado.getString("nome"));
+                p.setEmailPessoa(resultado.getString("email"));
+                p.setTelefonePessoa(resultado.getString("telefone"));
+                p.setDataNascimento(resultado.getString("data_nascimento"));
+        } catch (SQLException e) {
+            System.out.println("Erro ao consultar o cadastro de pessoa: " + e);
+        }
+        return p;
+    }
 }

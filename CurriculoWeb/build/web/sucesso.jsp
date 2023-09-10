@@ -10,8 +10,27 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Sucesso</title>
+        
+        <style>
+            ul {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+            }
+            li {
+                display: inline;
+            }
+        </style>
     </head>
     <body>
+        <ul>
+            <li>
+                <a href="paginaPrincipal.jsp">Home</a>
+            </li>
+            <li>
+                <a href="cadastroPessoa.jsp">Cadastro Pessoal</a>
+            </li>
+        </ul>
         <h1>Seu cadastro foi salvo com sucesso!</h1>
     </body>
 </html>

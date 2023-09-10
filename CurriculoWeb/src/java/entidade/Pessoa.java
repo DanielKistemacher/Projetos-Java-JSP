@@ -12,6 +12,13 @@ public class Pessoa {
     private String emailPessoa;
     private String telefonePessoa;
     private String dataNascimento;
+    
+    public Pessoa() {
+        this.nomePessoa = "";
+        this.emailPessoa = "";
+        this.telefonePessoa = "";
+        this.dataNascimento = "";
+    }
 
     public int getIdPessoa() {
         return idPessoa;

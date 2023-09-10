@@ -10,8 +10,27 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
+        
+        <style>
+            ul {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+            }
+            li {
+                display: inline;
+            }
+        </style>
     </head>
     <body>
+        <ul>
+            <li>
+                <a href="paginaPrincipal.jsp">Home</a>
+            </li>
+            <li>
+                <a href="cadastroPessoa.jsp">Cadastro Pessoal</a>
+            </li>
+        </ul>
         <h1>Não foi possível salvar seu cadastro, tente novamente.</h1>
     </body>
 </html>
