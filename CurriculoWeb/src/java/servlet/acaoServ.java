@@ -72,7 +72,7 @@ public class acaoServ extends HttpServlet {
             int idPessoa = Integer.parseInt (request.getParameter("id"));
             
             if (new PessoaDAO().excluir(idPessoa)) {
-                encaminharPagina("sucesso.jsp", request, response);
+                encaminharPagina("cadastroPessoa.jsp", request, response);
             } else {
                 encaminharPagina("erro.jsp", request, response);
             }
