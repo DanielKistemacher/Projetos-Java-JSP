@@ -14,7 +14,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Novo</title>
+        <title>Cadastros</title>
         
         <link rel="stylesheet" href="css/estilos.css">
     </head>
@@ -33,7 +33,7 @@
                 <input type="submit" name="voltarHome" value="Home" class="btn-home">
             </form>
                 
-            <h1>Cadastro Pessoa</h1>
+            <h1>Cadastro Pessoal</h1>
 
             <form action="acaoServ?a=salvarPessoa" method="post">
                 <label for="codigo" >Código: </label> <br>

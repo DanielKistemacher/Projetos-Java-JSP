@@ -1,6 +1,5 @@
 package apoio;
 
-import java.io.FileInputStream;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.util.Properties;
@@ -17,13 +16,14 @@ public class ConexaoBD {
     public ConexaoBD() {
         try {
             // Buscar parâmetros do banco de dados
-            //Properties prop = new Properties();            
+            Properties prop = new Properties();            
             //prop.load(new FileInputStream("db.properties"));
+            prop.load(getClass().getClassLoader().getResourceAsStream("apoio/db.properties"));
             
-            String dbdriver = "com.mysql.cj.jdbc.Driver"; //prop.getProperty("db.driver");
-            String dburl = "jdbc:mysql://localhost:3306/curriculoWeb"; //prop.getProperty("db.url");
-            String dbuser = "root"; //prop.getProperty("db.user");
-            String dbsenha = "280519"; //prop.getProperty("db.senha");
+            String dbdriver = prop.getProperty("db.driver"); //"com.mysql.cj.jdbc.Driver";
+            String dburl = prop.getProperty("db.url"); //"jdbc:mysql://localhost:3306/curriculoWeb";
+            String dbuser = prop.getProperty("db.user"); //"root";
+            String dbsenha = prop.getProperty("db.senha"); //"280519";
 
             // Carregar Driver do Banco de Dados
             Class.forName(dbdriver);

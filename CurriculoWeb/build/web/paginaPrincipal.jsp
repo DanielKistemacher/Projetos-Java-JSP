@@ -16,13 +16,13 @@
     </head>
     <body>
         <div>
-            <h1>Escolha uma das opções do menu</h1>
+            <h1>Escolha uma das opções do menu.</h1>
             <ul>
                 <li>
-                    <a href="paginaPrincipal.jsp" class="menu01">Home</a>
+                    <a href="cadastroPessoa.jsp" class="menuCadastrar">Cadastro Pessoal</a>
                 </li>
                 <li>
-                    <a href="cadastroPessoa.jsp" class="menu02">Cadastro Pessoa</a>
+                    <a href="index.jsp" class="menuSair">Sair</a>
                 </li>
             </ul>
         </div>

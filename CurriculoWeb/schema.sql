@@ -1,4 +1,4 @@
-create database curriculoWeb;
+create database curriculo;
 
 create table PESSOA (
 	id int AUTO_INCREMENT not null,

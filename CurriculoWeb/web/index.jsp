@@ -18,13 +18,15 @@
             <h1>Faça seu login</h1>
 
             <form action="/loginServ" method="post" class="form-signin">
-                <label for="userLogin" >Usuário: </label> <br>
-                <input type="text" id="userLogin" name="user"><br><br>
+                <label for="userLogin">Usuário: </label> <br>
+                <input type="text" id="userLogin" name="user" class="inputsLogin"><br><br>
 
                 <label for="senhaUsuario">Senha: </label> <br>
-                <input type="password" id="senhaUsuario" name="senha"><br><br>
-
-                <input type="submit" name="entrar" value="Entrar" class="btn-entrar">
+                <input type="password" id="senhaUsuario" name="senha" class="inputsLogin"><br><br>
+                
+                <div class="acaoEntrar">
+                    <input type="submit" name="entrar" value="Entrar" class="btn-entrar">
+                </div>
             </form>
         </div>
     </body>

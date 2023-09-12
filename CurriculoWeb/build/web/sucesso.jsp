@@ -11,26 +11,20 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Sucesso</title>
         
-        <style>
-            ul {
-                list-style-type: none;
-                margin: 0;
-                padding: 0;
-            }
-            li {
-                display: inline;
-            }
-        </style>
+        <link rel="stylesheet" href="css/estilos.css">
     </head>
     <body>
-        <ul>
-            <li>
-                <a href="paginaPrincipal.jsp">Home</a>
-            </li>
-            <li>
-                <a href="cadastroPessoa.jsp">Cadastro Pessoal</a>
-            </li>
-        </ul>
-        <h1>Operação realizada com sucesso!</h1>
+        <div>
+            <h1>Operação realizada com sucesso!</h1>
+            
+            <div class="menusVoltar">
+                <form action="erro.jsp" method="post" class="form-home">
+                    <input type="submit" name="voltarHome" value="Home" class="btn-voltarHome">
+                </form>
+                <form action="cadastroPessoa.jsp" method="post" class="form-voltarCadastro">
+                    <input type="submit" name="voltarCadastro" value="Cadastro Pessoal" class="voltarCadastro">
+                </form>
+            </div>
+        </div>
     </body>
 </html>

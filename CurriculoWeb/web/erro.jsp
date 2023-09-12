@@ -9,30 +9,22 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Erro</title>
         
         <link rel="stylesheet" href="css/estilos.css">
-        
-        <style>
-            ul {
-                list-style-type: none;
-                margin: 0;
-                padding: 0;
-            }
-            li {
-                display: inline;
-            }
-        </style>
     </head>
     <body>
-        <ul>
-            <li>
-                <a href="paginaPrincipal.jsp">Home</a>
-            </li>
-            <li>
-                <a href="cadastroPessoa.jsp">Cadastro Pessoal</a>
-            </li>
-        </ul>
-        <h1>Não foi possível realizar a ação, tente novamente.</h1>
+        <div>
+            <h1>Ação não realizada, por favor tente novamente.</h1>
+            
+            <div class="menusVoltar">
+                <form action="paginaPrincipal.jsp" method="post" class="form-home">
+                    <input type="submit" name="voltarHome" value="Home" class="btn-voltarHome">
+                </form>
+                <form action="cadastroPessoa.jsp" method="post" class="form-voltarCadastro">
+                    <input type="submit" name="voltarCadastro" value="Cadastro Pessoal" class="voltarCadastro">
+                </form>
+            </div>
+        </div>
     </body>
 </html>
