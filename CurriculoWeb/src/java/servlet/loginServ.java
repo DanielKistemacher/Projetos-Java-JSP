@@ -73,6 +73,9 @@ public class loginServ extends HttpServlet {
         String senha = request.getParameter("senha");
                 
         if (usuario.equals("") || senha.equals("")) {
+            
+            
+            
             encaminharPagina("index.jsp", request, response);
         } else if (new UsuarioDAO().autenticarLogin(usuario, senha)) {
             // APROVOU LOGIN
