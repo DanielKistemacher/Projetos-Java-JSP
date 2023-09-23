@@ -19,7 +19,7 @@
             <h1>Dados inválidos ou usuário não localizado.</h1>
             
             <form action="index.jsp" method="post" class="form-voltar">
-                <input type="submit" name="voltarLogin" value="Voltar para login" class="btn-entrar">
+                <input type="submit" name="voltarLogin" value="Login" class="btn-entrar">
             </form>
         </div>
     </body>

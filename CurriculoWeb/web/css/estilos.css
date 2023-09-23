@@ -16,6 +16,7 @@ h1 {
     align-items: center;
     justify-content: center;
     display: flex;
+    color: black;
 }
 
 
@@ -49,6 +50,7 @@ h1 {
     display: flex;
     align-items: center;
     justify-content: center;
+    color: black;
 }
 
 .form-home {
