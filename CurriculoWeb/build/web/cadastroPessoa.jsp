@@ -14,9 +14,10 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Cadastros</title>
+        <title>Novo Cadastro</title>
         
         <link rel="stylesheet" href="css/estilos.css">
+        
     </head>
     
     <%
@@ -28,64 +29,42 @@
     %>
     
     <body>
-        <div>
+        <div class="telaCadastro">
             <form action="paginaPrincipal.jsp" method="post" class="form-home">
                 <input type="submit" name="voltarHome" value="Home" class="btn-home">
             </form>
                 
             <h1>Cadastro Pessoal</h1>
 
-            <form action="acaoServ?a=salvarPessoa" method="post">
-                <label for="codigo" >Código: </label> <br>
-                <input type="text" id="codigo" name="codigo" readonly="" value="<%= pessoa.getIdPessoa() %>"> <br><br>
+            <form action="acaoServ?a=salvarPessoa" method="post" class="form-cadastro">
+                <label for="codigo" class="labelCadastro">Código: </label> <br>
+                <input type="text" id="codigo" name="codigo" readonly="" value="<%= pessoa.getIdPessoa() %>" class="inputsCadastro"> <br><br>
 
-                <label for="nome" >Nome: </label> <br>
-                <input type="text" id="nome" name="nome" value="<%= pessoa.getNomePessoa() %>"> <br><br>
+                <label for="nome" class="labelCadastro">Nome: </label> <br>
+                <input type="text" id="nome" name="nome" value="<%= pessoa.getNomePessoa() %>" class="inputsCadastro"> <br><br>
 
-                <label for="email" >Email: </label> <br>
-                <input type="text" id="email" name="email" value="<%= pessoa.getEmailPessoa() %>"> <br><br>
+                <label for="email" class="labelCadastro">Email: </label> <br>
+                <input type="text" id="email" name="email" value="<%= pessoa.getEmailPessoa() %>" class="inputsCadastro"> <br><br>
 
-                <label for="telefone">Telefone: </label> <br>
-                <input type="text" id="telefone" name="telefone" value="<%= pessoa.getTelefonePessoa() %>"> <br><br>
+                <label for="telefone" class="labelCadastro">Telefone: </label> <br>
+                <input type="text" id="telefone" name="telefone" value="<%= pessoa.getTelefonePessoa() %>" class="inputsCadastro"> <br><br>
 
-                <label for="dataNascimento">Data de nascimento (dd/mm/aaaa): </label> <br>
-                <input type="text" id="dataNascimento" name="dataNascimento" value="<%= pessoa.getDataNascimento() %>"> <br><br>
+                <label for="dataNascimento" class="labelCadastro">Data de nascimento (dd/mm/aaaa): </label> <br>
+                <input type="text" id="dataNascimento" name="dataNascimento" value="<%= pessoa.getDataNascimento() %>" class="inputsCadastro"> <br><br>
 
-                <input type="submit" name="salvar" value="Salvar" class="btn-cadastrar">
+                <input type="submit" name="salvar" value="Salvar" class="btn-cadastrar" onclick="camposPreenchidos()">
             </form>
-
-            <br><br>
-                
-            <h3>LISTA DE CADASTROS:</h3>
-
-            <%
-                ArrayList<Pessoa> pessoas = new PessoaDAO().consultarTodos();
-            %>
-
-            <table class="table">
-                <th>Código</th>
-                <th>Nome</th>
-                <th>Email</th>
-                <th>Telefone</th>
-                <th>Data de Nascimento</th>
-                <th>Editar</th>
-                <th>Excluir</th>
-                    <%
-                        for (int i=0; i < pessoas.size(); i++) {
-                    %>
-                <tr>
-                    <td><%= pessoas.get(i).getIdPessoa() %></td>
-                    <td><%= pessoas.get(i).getNomePessoa() %></td>
-                    <td><%= pessoas.get(i).getEmailPessoa() %></td>
-                    <td><%= pessoas.get(i).getTelefonePessoa() %></td>
-                    <td><%= pessoas.get(i).getDataNascimento() %></td>
-                    <td> <a href="acaoServ?a=editarPessoa&id=<%= pessoas.get(i).getIdPessoa()%>" class="btn-editar">Editar</a></td>
-                    <td> <a href="acaoServ?a=excluirPessoa&id=<%= pessoas.get(i).getIdPessoa()%>" class="btn-excluir">Excluir</a></td>
-                    <td></td>
-                </tr>
-                <%
-                    }
-                %>
         </div>
+        
+        <script language="javascript">
+            function camposPreenchidos() {
+                if (document.getElementById('nome').value == "" ||
+                        document.getElementById('email').value == "" ||
+                        document.getElementById('telefone').value == "" ||
+                        document.getElementById('dataNascimento').value == ""){
+                            alert ("Preencha todos os campos!");
+                        }
+            }
+        </script>>
     </body>
 </html>

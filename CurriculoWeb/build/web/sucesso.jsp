@@ -14,15 +14,15 @@
         <link rel="stylesheet" href="css/estilos.css">
     </head>
     <body>
-        <div>
-            <h1>Operação realizada com sucesso!</h1>
+        <div class="sucesso">
+            <h1 class="h1Preto">Operação realizada com sucesso!</h1>
             
             <div class="menusVoltar">
-                <form action="erro.jsp" method="post" class="form-home">
+                <form action="paginaPrincipal.jsp" method="post" class="form-home">
                     <input type="submit" name="voltarHome" value="Home" class="btn-voltarHome">
                 </form>
-                <form action="cadastroPessoa.jsp" method="post" class="form-voltarCadastro">
-                    <input type="submit" name="voltarCadastro" value="Cadastro Pessoal" class="voltarCadastro">
+                <form action="cadastros.jsp" method="post" class="form-voltarCadastro">
+                    <input type="submit" name="voltarCadastro" value="Cadastros" class="voltarCadastro">
                 </form>
             </div>
         </div>
