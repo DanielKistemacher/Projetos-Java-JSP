@@ -10,7 +10,7 @@
         
         <link rel="stylesheet" href="css/estilos.css">
     <body>
-        <div class="telaCadastros">
+        <div class="telaEventos">
             <form action="paginaPrincipal.jsp" method="post" class="form-home">
                 <input type="submit" name="voltarHome" value="Home" class="btn-home">
             </form>
