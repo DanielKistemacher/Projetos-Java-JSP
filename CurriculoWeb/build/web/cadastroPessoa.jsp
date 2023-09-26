@@ -6,8 +6,6 @@
 
 <%@page import="java.util.ArrayList"%>
 <%@page import="dao.PessoaDAO"%>
-<%@page import="dao.PessoaDAO"%>
-<%@page import="entidade.Pessoa"%>
 <%@page import="entidade.Pessoa"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>

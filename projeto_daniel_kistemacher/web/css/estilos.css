@@ -19,7 +19,6 @@ h1 {
     color: white;
 }
 
-
 .paginaLogin {
     width: 380px;
     height: 400px;
@@ -89,18 +88,7 @@ h1 {
 
 .telaCadastro {
     width: 800px;
-    height: 1150px;
-    background-color: #1C1C1C;
-    border-radius: 2%;
-    border: black;
-    align-items: center;
-    justify-content: center;
-    display: inline;
-}
-
-.telaCadastros {
-    width: 1200px;
-    height: 850px;
+    height: 730px;
     background-color: #1C1C1C;
     border-radius: 2%;
     border: black;

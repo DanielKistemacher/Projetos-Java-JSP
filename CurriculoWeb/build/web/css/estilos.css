@@ -40,6 +40,15 @@ h1 {
     box-shadow: 20px 20px 50px grey;
 }
 
+.erroLogin {
+    width: 500px;
+    height: 250px;
+    background-color: #1C1C1C;
+    border-radius: 5%;
+    box-shadow: 20px 20px 50px grey;
+    text-align: center;
+}
+
 .autor {
     color: black;
     font-size: small;
@@ -80,7 +89,7 @@ h1 {
 
 .telaCadastro {
     width: 800px;
-    height: 650px;
+    height: 1150px;
     background-color: #1C1C1C;
     border-radius: 2%;
     border: black;

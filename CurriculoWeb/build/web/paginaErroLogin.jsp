@@ -15,8 +15,8 @@
         
     </head>
     <body>
-        <div>
-            <h1>Dados inválidos ou usuário não localizado.</h1>
+        <div class="erroLogin">
+            <h1 class="h1Preto">Dados inválidos ou usuário não localizado.</h1>
             
             <form action="index.jsp" method="post" class="form-voltar">
                 <input type="submit" name="voltarLogin" value="Login" class="btn-entrar">
