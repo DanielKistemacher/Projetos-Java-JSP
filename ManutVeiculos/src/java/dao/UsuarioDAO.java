@@ -12,20 +12,21 @@ import java.sql.Statement;
  */
 public class UsuarioDAO {
     
-    
     public boolean salvar(Usuario usuario) {
-        
+
         try {
             Statement st = ConexaoBD.getInstance().getConnection().createStatement();
-            
+
             String sql = "insert into usuario values ("
                     + "default,"
                     + "'"+ usuario.getNomeUsuario()+"',"
                     + "'"+ usuario.getSenhaUsuario()+"');";
+
+            System.out.println(sql);
             
             st.executeUpdate(sql);
             return true;
-            
+
         } catch (SQLException e) {
             System.out.println("Erro ao salvar usuário: " + e);
             return false;
