@@ -39,6 +39,14 @@
                     <input type="submit" name="cadastrar" value="Cadastrar" class="btn-secundario">
                 </form>
             </div>
+            
+            <%
+                if ( request.getAttribute("errorMessage") != null ) {
+                    System.out.println("Erro no login");
+                }
+            %>
+            
+            <h2> <%=request.getAttribute("errorMessage")%> </h2>
         </div>
          
     </body>

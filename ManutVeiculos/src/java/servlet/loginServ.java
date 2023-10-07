@@ -85,7 +85,8 @@ public class loginServ extends HttpServlet {
                 encaminharPagina("paginaPrincipal.jsp", request, response);
             } else {
                 //RECUSOU LOGIN
-                encaminharPagina("paginaErroLogin.jsp", request, response);
+                request.setAttribute("errorMessage", "Usuário ou senha inválidos.");
+                encaminharPagina("login.jsp", request, response);
             }
         }
         
